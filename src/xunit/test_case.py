@@ -33,3 +33,7 @@ class TestCase:
     def run(self) -> None:
         self.set_up()
         getattr(self, self.name)()
+        self.tear_down()
+
+    def tear_down(self) -> None:
+        pass

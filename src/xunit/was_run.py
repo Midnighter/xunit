@@ -39,3 +39,6 @@ class WasRun(TestCase):
 
     def test_method(self) -> None:
         self.log.append("test_method")
+
+    def tear_down(self) -> None:
+        self.log.append("teardown")
