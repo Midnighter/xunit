@@ -34,8 +34,5 @@ class WasRun(TestCase):
         super().__init__(name=name, **kwargs)
         self.was_run = False
 
-    def run(self) -> None:
-        getattr(self, self.name)()
-
     def test_method(self) -> None:
         self.was_run = True

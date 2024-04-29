@@ -26,3 +26,6 @@ class TestCase:
     def __init__(self, name: str, **kwargs) -> None:
         super().__init__(**kwargs)
         self.name = name
+
+    def run(self) -> None:
+        getattr(self, self.name)()
