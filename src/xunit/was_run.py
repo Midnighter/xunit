@@ -28,10 +28,11 @@
 class WasRun:
 
     def __init__(self, name: str) -> None:
+        self.name = name
         self.was_run = False
 
     def run(self) -> None:
-        self.test_method()
+        getattr(self, self.name)()
 
     def test_method(self) -> None:
         self.was_run = True
