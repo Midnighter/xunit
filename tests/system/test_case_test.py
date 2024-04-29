@@ -33,7 +33,7 @@ class TestCaseTest(TestCase):
     def test_template_method(self) -> None:
         test = WasRun("test_method")
         test.run()
-        assert test.log == ["setup", "test_method"]
+        assert test.log == ["setup", "test_method", "teardown"]
 
 
 if __name__ == '__main__':
