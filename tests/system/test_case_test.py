@@ -30,18 +30,11 @@ from xunit import WasRun, TestCase
 
 class TestCaseTest(TestCase):
 
-    def set_up(self) -> None:
-        self.test = WasRun("test_method")
-
-    def test_set_up(self) -> None:
-        self.test.run()
-        assert self.test.log == ["setup", "test_method"]
-
-    def test_running(self) -> None:
-        self.test.run()
-        assert self.test.was_run
+    def test_template_method(self) -> None:
+        test = WasRun("test_method")
+        test.run()
+        assert test.log == ["setup", "test_method"]
 
 
 if __name__ == '__main__':
-    TestCaseTest("test_set_up").run()
-    TestCaseTest("test_running").run()
+    TestCaseTest("test_template_method").run()
