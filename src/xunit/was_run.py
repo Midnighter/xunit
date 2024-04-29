@@ -26,4 +26,6 @@
 
 
 class WasRun:
-    pass
+
+    def __init__(self, name: str) -> None:
+        self.was_run = False
