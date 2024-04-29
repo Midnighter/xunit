@@ -22,20 +22,5 @@
 # SOFTWARE.
 
 
-"""Provide the test case class."""
-
-
-from .test_case import TestCase
-
-
-class WasRun(TestCase):
-
-    def __init__(self, name: str) -> None:
-        self.name = name
-        self.was_run = False
-
-    def run(self) -> None:
-        getattr(self, self.name)()
-
-    def test_method(self) -> None:
-        self.was_run = True
+class TestCase:
+    pass
