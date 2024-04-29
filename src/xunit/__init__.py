@@ -25,4 +25,5 @@
 """Provide top level symbols."""
 
 
+from .test_case import TestCase
 from .was_run import WasRun

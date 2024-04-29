@@ -25,15 +25,16 @@
 """"""
 
 
-from xunit import WasRun
+from xunit import WasRun, TestCase
 
 
-def test_was_run():
-    test = WasRun("test_method")
-    assert not test.was_run
-    test.run()
-    assert test.was_run
+class TestCaseTest(TestCase):
+    def test_running(self) -> None:
+        test = WasRun("test_method")
+        assert not test.was_run
+        test.run()
+        assert test.was_run
 
 
 if __name__ == '__main__':
-    test_was_run()
+    TestCaseTest("test_running").run()
