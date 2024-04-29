@@ -33,11 +33,13 @@ class TestCase:
     def set_up(self) -> None:
         pass
 
-    def run(self) -> None:
+    def run(self) -> TestResult:
+        result = TestResult()
+        result.test_started()
         self.set_up()
         getattr(self, self.name)()
         self.tear_down()
-        return TestResult()
+        return result
 
     def tear_down(self) -> None:
         pass

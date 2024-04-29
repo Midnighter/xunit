@@ -25,6 +25,10 @@
 class TestResult:
     def __init__(self, **kwargs) -> None:
         super().__init__(**kwargs)
+        self.run_count = 0
+
+    def test_started(self) -> None:
+        self.run_count += 1
 
     def summary(self) -> str:
-        return "1 run, 0 failed"
+        return f"{self.run_count} run, 0 failed"
