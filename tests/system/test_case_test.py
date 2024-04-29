@@ -25,7 +25,7 @@
 """"""
 
 
-from xunit import WasRun, TestCase
+from xunit import WasRun, TestCase, TestResult
 
 
 class TestCaseTest(TestCase):
@@ -45,8 +45,15 @@ class TestCaseTest(TestCase):
         result = test.run()
         assert result.summary() == "1 run, 1 failed"
 
+    def test_failed_result_formatting(self) -> None:
+        result = TestResult()
+        result.test_started()
+        result.test_failed()
+        assert result.summary() == "1 run, 1 failed"
+
 
 if __name__ == '__main__':
     TestCaseTest("test_template_method").run()
     TestCaseTest("test_result").run()
+    TestCaseTest("test_failed_result_formatting").run()
     TestCaseTest("test_failed_result").run()
