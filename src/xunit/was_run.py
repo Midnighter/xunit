@@ -22,7 +22,8 @@
 # SOFTWARE.
 
 
-"""Provide top level symbols."""
+"""Provide the test case class."""
 
 
-from .was_run import WasRun
+class WasRun:
+    pass
