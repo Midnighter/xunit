@@ -37,7 +37,10 @@ class TestCase:
         result = TestResult()
         result.test_started()
         self.set_up()
-        getattr(self, self.name)()
+        try:
+            getattr(self, self.name)()
+        except Exception:
+            result.test_failed()
         self.tear_down()
         return result
 
