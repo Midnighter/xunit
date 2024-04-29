@@ -1,0 +1,27 @@
+{
+  "template": "https://github.com/Midnighter/cookiecutter-python-package",
+  "commit": "8d647368df83b96f1c5f13d0bd96cbc14b5a7c68",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "full_name": "Moritz E. Beber",
+      "email": "midnighter@posteo.net",
+      "dev_platform": "GitHub",
+      "__dev_platform_url": "https://github.com",
+      "dev_platform_username": "Midnighter",
+      "project_name": "xUnit",
+      "project_slug": "xunit",
+      "project_module": "xunit",
+      "project_short_description": "A working example of the xUnit testing tool described in Kent Beck's \"Test-Driven Development by Example\".",
+      "license": "MIT",
+      "release_date": "2024-04-29",
+      "year": "2024",
+      "_extensions": [
+        "jinja2_time.TimeExtension",
+        "jinja2_strcase.StrcaseExtension"
+      ],
+      "_template": "https://github.com/Midnighter/cookiecutter-python-package"
+    }
+  },
+  "directory": null
+}
