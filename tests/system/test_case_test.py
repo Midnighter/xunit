@@ -35,7 +35,7 @@ class TestCaseTest(TestCase):
 
     def test_set_up(self) -> None:
         self.test.run()
-        assert self.test.log == ["setup"]
+        assert self.test.log == ["setup", "test_method"]
 
     def test_running(self) -> None:
         self.test.run()
