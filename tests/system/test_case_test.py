@@ -40,6 +40,13 @@ class TestCaseTest(TestCase):
         result = test.run()
         assert result.summary() == "1 run, 0 failed"
 
+    def test_failed_result(self) -> None:
+        test = WasRun("test_broken_method")
+        result = test.run()
+        assert result.summary() == "1 run, 1 failed"
+
 
 if __name__ == '__main__':
+    TestCaseTest("test_template_method").run()
     TestCaseTest("test_result").run()
+    TestCaseTest("test_failed_result").run()
