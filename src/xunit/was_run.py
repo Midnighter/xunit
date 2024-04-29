@@ -33,6 +33,10 @@ class WasRun(TestCase):
     def __init__(self, name: str, **kwargs) -> None:
         super().__init__(name=name, **kwargs)
         self.was_run = False
+        self.was_set_up = False
+
+    def set_up(self) -> None:
+        self.was_set_up = True
 
     def test_method(self) -> None:
         self.was_run = True

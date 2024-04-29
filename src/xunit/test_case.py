@@ -27,5 +27,9 @@ class TestCase:
         super().__init__(**kwargs)
         self.name = name
 
+    def set_up(self) -> None:
+        pass
+
     def run(self) -> None:
+        self.set_up()
         getattr(self, self.name)()
