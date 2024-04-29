@@ -29,3 +29,6 @@ class WasRun:
 
     def __init__(self, name: str) -> None:
         self.was_run = False
+
+    def test_method(self) -> None:
+        self.was_run = True
