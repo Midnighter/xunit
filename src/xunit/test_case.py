@@ -33,8 +33,7 @@ class TestCase:
     def set_up(self) -> None:
         pass
 
-    def run(self) -> TestResult:
-        result = TestResult()
+    def run(self, result: TestResult) -> None:
         result.test_started()
         self.set_up()
         try:
@@ -42,7 +41,6 @@ class TestCase:
         except Exception:
             result.test_failed()
         self.tear_down()
-        return result
 
     def tear_down(self) -> None:
         pass

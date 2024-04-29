@@ -25,7 +25,7 @@
 """"""
 
 
-from xunit import WasRun, TestCase, TestResult
+from xunit import WasRun, TestCase, TestResult, TestSuite
 
 
 class TestCaseTest(TestCase):
@@ -55,13 +55,18 @@ class TestCaseTest(TestCase):
         suite = TestSuite()
         suite.add(WasRun("test_method"))
         suite.add(WasRun("test_broken_method"))
-        result = suite.run()
+        result = TestResult()
+        suite.run(result)
         assert result.summary() == "2 run, 1 failed"
 
 
 if __name__ == '__main__':
-    print(TestCaseTest("test_template_method").run().summary())
-    print(TestCaseTest("test_result").run().summary())
-    print(TestCaseTest("test_failed_result_formatting").run().summary())
-    print(TestCaseTest("test_failed_result").run().summary())
-    print(TestCaseTest("test_suite").run().summary())
+    suite = TestSuite()
+    suite.add(TestCaseTest("test_template_method"))
+    suite.add(TestCaseTest("test_result"))
+    suite.add(TestCaseTest("test_failed_result_formatting"))
+    suite.add(TestCaseTest("test_failed_result"))
+    suite.add(TestCaseTest("test_suite"))
+    result = TestResult()
+    suite.run(result)
+    print(result.summary())
