@@ -22,6 +22,9 @@
 # SOFTWARE.
 
 
+from .test_result import TestResult
+
+
 class TestCase:
     def __init__(self, name: str, **kwargs) -> None:
         super().__init__(**kwargs)
@@ -34,6 +37,7 @@ class TestCase:
         self.set_up()
         getattr(self, self.name)()
         self.tear_down()
+        return TestResult()
 
     def tear_down(self) -> None:
         pass

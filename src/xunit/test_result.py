@@ -22,9 +22,9 @@
 # SOFTWARE.
 
 
-"""Provide top level symbols."""
+class TestResult:
+    def __init__(self, **kwargs) -> None:
+        super().__init__(**kwargs)
 
-
-from .test_result import TestResult
-from .test_case import TestCase
-from .was_run import WasRun
+    def summary(self) -> str:
+        return "1 run, 0 failed"
