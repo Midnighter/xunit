@@ -31,7 +31,7 @@ from xunit import WasRun
 def test_was_run():
     test = WasRun("test_method")
     assert not test.was_run
-    test.test_method()
+    test.run()
     assert test.was_run
 
 
