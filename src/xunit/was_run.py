@@ -32,12 +32,10 @@ class WasRun(TestCase):
 
     def __init__(self, name: str, **kwargs) -> None:
         super().__init__(name=name, **kwargs)
-        self.was_run = False
         self.log = []
 
     def set_up(self) -> None:
         self.log.append("setup")
 
     def test_method(self) -> None:
-        self.was_run = True
         self.log.append("test_method")
