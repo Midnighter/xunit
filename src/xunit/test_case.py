@@ -23,4 +23,6 @@
 
 
 class TestCase:
-    pass
+    def __init__(self, name: str, **kwargs) -> None:
+        super().__init__(**kwargs)
+        self.name = name

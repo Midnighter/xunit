@@ -30,8 +30,8 @@ from .test_case import TestCase
 
 class WasRun(TestCase):
 
-    def __init__(self, name: str) -> None:
-        self.name = name
+    def __init__(self, name: str, **kwargs) -> None:
+        super().__init__(name=name, **kwargs)
         self.was_run = False
 
     def run(self) -> None:
