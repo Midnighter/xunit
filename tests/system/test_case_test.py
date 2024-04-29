@@ -29,6 +29,12 @@ from xunit import WasRun, TestCase
 
 
 class TestCaseTest(TestCase):
+
+    def test_set_up(self) -> None:
+        test = WasRun("test_method")
+        test.run()
+        assert test.was_set_up
+
     def test_running(self) -> None:
         test = WasRun("test_method")
         assert not test.was_run
@@ -37,4 +43,5 @@ class TestCaseTest(TestCase):
 
 
 if __name__ == '__main__':
+    TestCaseTest("test_set_up").run()
     TestCaseTest("test_running").run()
