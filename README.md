@@ -8,45 +8,23 @@
 
 A working example of the xUnit testing tool described in Kent Beck's "Test-Driven Development by Example".
 
-## Post Template-Instantiation Steps
+## Installation
 
-1. Start working with git.
+Install the project in editable mode
 
-    ```shell
-    git init
-    ```
+```shell
+pip install -e .
+```
 
-2. Install the git pre-commit hooks using the `pre-commit` tool.
+Install `pytest-watcher` to easily execute a command whenever a change has occurred.
 
-    ```shell
-    pip install pre-commit
-    pre-commit install
-    ```
+## Usage
 
-3. Commit all the files.
+During development, you can keep running the tests with the following command, for example:
 
-    ```shell
-    git add .
-    git commit -m "chore: initialize project cookiecutter"
-    ```
-
-4. Create a repository on [GitHub](https://github.com) if you haven't done
-   so yet.
-5. Browse through the architecture decision records (`docs/adr`) if you want
-   to understand details of the package design.
-6. Remove this section from the readme and describe what your package is all
-   about.
-7. When you're ready to make a release, perform the following steps.
-
-   1. On [GitHub](https://github.com) set the secure environment
-      variables `PYPI_USERNAME` and `PYPI_PASSWORD` to `__token__` and a respective PyPI API token.
-   2. Tag your latest commit with the desired version and let GitHub handle
-      the release.
-
-        ```shell
-        git tag 0.1.0
-        git push origin 0.1.0
-        ```
+```shell
+ptw . --runner python tests/unit/test_was_run.py
+```
 
 ## Copyright
 
