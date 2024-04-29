@@ -40,5 +40,8 @@ class WasRun(TestCase):
     def test_method(self) -> None:
         self.log.append("test_method")
 
+    def test_broken_method(self) -> None:
+        raise AssertionError()
+
     def tear_down(self) -> None:
         self.log.append("teardown")
