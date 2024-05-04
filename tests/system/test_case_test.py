@@ -29,37 +29,35 @@ from xunit import WasRun, TestCase, TestResult, TestSuite
 
 class TestCaseTest(TestCase):
 
+    def set_up(self) -> None:
+        self.result = TestResult()
+
     def test_template_method(self) -> None:
         test = WasRun("test_method")
-        result = TestResult()
-        test.run(result)
+        test.run(self.result)
         assert test.log == ["setup", "test_method", "teardown"]
 
     def test_result(self) -> None:
         test = WasRun("test_method")
-        result = TestResult()
-        test.run(result)
-        assert result.summary() == "1 run, 0 failed"
+        test.run(self.result)
+        assert self.result.summary() == "1 run, 0 failed"
 
     def test_failed_result(self) -> None:
         test = WasRun("test_broken_method")
-        result = TestResult()
-        test.run(result)
-        assert result.summary() == "1 run, 1 failed"
+        test.run(self.result)
+        assert self.result.summary() == "1 run, 1 failed"
 
     def test_failed_result_formatting(self) -> None:
-        result = TestResult()
-        result.test_started()
-        result.test_failed()
-        assert result.summary() == "1 run, 1 failed"
+        self.result.test_started()
+        self.result.test_failed()
+        assert self.result.summary() == "1 run, 1 failed"
 
     def test_suite(self) -> None:
         suite = TestSuite()
         suite.add(WasRun("test_method"))
         suite.add(WasRun("test_broken_method"))
-        result = TestResult()
-        suite.run(result)
-        assert result.summary() == "2 run, 1 failed"
+        suite.run(self.result)
+        assert self.result.summary() == "2 run, 1 failed"
 
 
 if __name__ == '__main__':
