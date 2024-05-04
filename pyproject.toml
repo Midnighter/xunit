@@ -12,7 +12,7 @@ requires = ["hatchling", "hatch-vcs"]
 
 [project]
 name = "xunit"
-description = "A working example of the xUnit testing tool described in Kent Beck's \"Test-Driven Development by Example\"."
+description = "A working example of the xUnit testing tool described in Kent Beck's \"Test-Driven Development by Example\" implemented in more modern Python code."
 authors = [
     { name = "Moritz E. Beber", email = "midnighter@posteo.net" }
 ]
