@@ -7,13 +7,11 @@ evolution of the codebase.
 
 ## Installation
 
-Install the project in editable mode
+Install the project in editable mode with development dependencies, such as `pytest-watcher`.
 
 ```shell
-pip install -e .
+pip install -e '.[dev]'
 ```
-
-Install `pytest-watcher` to easily execute a command whenever a change has occurred.
 
 ## Usage
 
@@ -23,6 +21,9 @@ example:
 ```shell
 ptw . --runner python tests/system/test_case_test.py --clear
 ```
+
+That initiates `pytest-watcher` which will watch for changes in the project
+directory (`.`) and invoke the given command.
 
 ## Unlicense
 

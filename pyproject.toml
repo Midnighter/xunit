@@ -25,7 +25,7 @@ requires-python = ">=3.10"
 # Please consult https://pypi.org/classifiers/ for a full list.
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
-    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
     "License :: OSI Approved :: The Unlicense (Unlicense)",
     "Natural Language :: English",
     "Operating System :: OS Independent",
@@ -33,11 +33,16 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
-    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Topic :: Education :: Testing",
     "Typing :: Typed",
 ]
-# TODO: add keywords
-keywords = []
+keywords = [
+    "test-driven development",
+    "TDD",
+    "testing",
+    "xUnit",
+    "Kent Beck",
+]
 dynamic = ["version"]
 dependencies = []
 
