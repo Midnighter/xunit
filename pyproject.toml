@@ -19,14 +19,14 @@ authors = [
 maintainers = [
     { name = "Moritz E. Beber", email = "midnighter@posteo.net" }
 ]
-license = "MIT"
+license = "Unlicense"
 readme = {"file" = "README.md", "content-type" = "text/markdown"}
 requires-python = ">=3.10"
 # Please consult https://pypi.org/classifiers/ for a full list.
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
     "Intended Audience :: Science/Research",
-    "License :: OSI Approved :: MIT License",
+    "License :: OSI Approved :: The Unlicense (Unlicense)",
     "Natural Language :: English",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3 :: Only",
