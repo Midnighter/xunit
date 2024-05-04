@@ -37,6 +37,11 @@ class TestCaseTest(TestCase):
         test.run(self.result)
         assert test.log == ["setup", "test_method", "teardown"]
 
+    def test_failed_teardown(self) -> None:
+        test = WasRun("test_broken_method")
+        test.run(self.result)
+        assert test.log == ["setup", "test_broken_method", "teardown"]
+
     def test_result(self) -> None:
         test = WasRun("test_method")
         test.run(self.result)
@@ -64,6 +69,7 @@ if __name__ == '__main__':
     suite = TestSuite()
     suite.add(TestCaseTest("test_template_method"))
     suite.add(TestCaseTest("test_result"))
+    suite.add(TestCaseTest("test_failed_teardown"))
     suite.add(TestCaseTest("test_failed_result_formatting"))
     suite.add(TestCaseTest("test_failed_result"))
     suite.add(TestCaseTest("test_suite"))

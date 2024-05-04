@@ -40,7 +40,8 @@ class TestCase:
             getattr(self, self.name)()
         except Exception:
             result.test_failed()
-        self.tear_down()
+        finally:
+            self.tear_down()
 
     def tear_down(self) -> None:
         pass
