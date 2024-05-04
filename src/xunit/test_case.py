@@ -35,7 +35,12 @@ class TestCase:
 
     def run(self, result: TestResult) -> None:
         result.test_started()
-        self.set_up()
+        try:
+            self.set_up()
+        except Exception:
+            result.setup_failed()
+            self.tear_down()
+            return
         try:
             getattr(self, self.name)()
         except Exception:
