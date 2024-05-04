@@ -39,24 +39,17 @@ classifiers = [
 # TODO: add keywords
 keywords = []
 dynamic = ["version"]
-dependencies = [
-    "depinfo ~=2.2"
-]
+dependencies = []
 
 [project.urls]
 Homepage = "https://github.com/Midnighter/xunit"
-Documentation = "https://xunit.readthedocs.io"
 "Source Code" = "https://github.com/Midnighter/xunit"
 "Bug Tracker" = "https://github.com/Midnighter/xunit/issues"
-Download = "https://pypi.org/project/xunit/#files"
 
 [project.optional-dependencies]
 dev = [
-    "mkdocs-material ~=9.5",
-    "mkdocstrings[python] ~=0.24",
-    "mkdocs-awesome-pages-plugin ~=2.9",
     "pre-commit",
-    "tox ~=4.0"
+    "pytest-watcher",
 ]
 
 ################################################################################
@@ -83,10 +76,6 @@ extend-exclude = '''
     _version.py
 )
 '''
-
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-markers = ["raises"]
 
 [tool.coverage.paths]
 source = [
@@ -137,25 +126,7 @@ known-first-party = ["xunit"]
 lines-after-imports = 2
 
 [tool.pydoclint]
-style = "google"  # TODO: Other styles are possible here.
+style = "google"
 arg-type-hints-in-docstring = false
 check-return-types = false
 check-yield-types = false
-
-# TODO: Adjust mypy configuration.
-#[tool.mypy]
-#plugins = [
-#    "pydantic.mypy",
-#]
-
-# Stop mypy from complaining about missing types from imports.
-#[[tool.mypy.overrides]]
-#module = [
-#    "pandas",
-#]
-#ignore_missing_imports = true
-
-#[tool.pydantic-mypy]
-#init_forbid_extra = true
-#init_typed = true
-#warn_required_dynamic_aliases = true
